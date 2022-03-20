@@ -1,0 +1,246 @@
+<html oncontextmenu="return false" onmousedown="return false" onkeydown="return false">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <title>S3 bucket - part 1</title>
+    <style>
+        nav{
+         border-color:rgba(0,0,0);
+         border-radius:10px;
+         border-width:200;
+         }
+         nav:hover{
+          box-shadow: 20px 20px 100px 50px #192824;
+          }
+          p{
+            margin-left: 100px;
+          }
+          img{
+            margin-left: 100px;
+            height: 600px;
+            width:1000px;
+          }
+          .frame {
+            width: 90%;
+            margin: 40px auto;
+          }
+          button {
+            margin: 20px;
+          }
+          .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+             box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+            outline: none;
+          }
+          
+          .btn-1{
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+            border:none;
+            box-shadow: none;
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            -webkit-perspective: 230px;
+            perspective: 230px;
+          }
+          .btn-1 span {
+            background: rgb(0,172,238);
+          background: linear-gradient(0deg, rgba(255,0,102,1) 0%, rgba(255,16,21,1) 100%);
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+            border-radius: 5px;
+            margin:0;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+          }
+          .btn-1 span:nth-child(1) {
+            box-shadow:
+             -7px -7px 20px 0px #fff9,
+             -4px -4px 5px 0px #fff9,
+             7px 7px 20px 0px #0002,
+             4px 4px 5px 0px #0001;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+          }
+          .btn-1 span:nth-child(2) {
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+          }
+          .btn-1:hover span:nth-child(1) {
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+          }
+          .btn-1:hover span:nth-child(2) {
+            box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+             7px 7px 20px 0px rgba(0,0,0,.1),
+             4px 4px 5px 0px rgba(0,0,0,.1);
+           color: transparent;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+          }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light" style="height:400px; background-image:url('https://www.pradheepa.com/static/8e65a0f5556901654998f8f0b24d5a00/aws-s3.png');background-size:cover; background-repeat: no-repeat;">
+</nav>
+<br>
+<br>
+<br>
+<form action="athena.html" method="post">
+<div class="frame">
+  <button style="float: right;" class="custom-btn btn-1"><span><b>GO</span></b><span><b>Athena!</b></span></button>
+</div>
+</form><br><br><br><br>
+<center>
+  <h3><b>Topic Given - Part 1</b></h3>
+</center>
+<br>
+  <p><b>1.   Create a bucket in AWS S3 buckets.<br>
+  2.  Check the lifecycle policies.<br>
+  3.  Check ACL's private/public.<br>
+  4.  What is encryption in S3.<br>
+  5.  Check all "properties" and "permissions" options in S3.</b></p>
+  <br><br><br>
+<center>
+  <h3><b>To Do Regarding Each Topic</b></h3>
+</center>
+<br>
+<center><h3><b>Simple storage service(S3)</b></h3></center><br>
+<pre>         1. Amazon S3 is an object storage service that stores data as objects within buckets. An object is a file and any metadata that describes the file.
+         2. A bucket is a container for objects. To store your data in Amazon S3, you first create a bucket and specify a bucket name and AWS Region.</pre><br>
+<p><b>1. How to create a S3 bucket in aws?</b></p><br>
+<P><i>To create a bucket in S3 follow the steps given bellow in gif image. While creating a bucket give the bucket name as unique name which does not choosen by someone around the world. Don't use capital letters and special charecters while creating a bucket use "-" with some random number to avoid polygramy.</i></P>
+<br>
+<p><b style="color: red;">************************************** How to create S3 bucket is shown below **************************************</b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/s3bucketcreate.gif"><br><br>
+<p><b>2. What are lifecycle policy and how to use them?</b></p><br>
+<P><i>Before moving to life cycle policies we need to learn about S3 tires.<br>
+  <b><u>S3 tires:</u></b><br>
+  Lets consider the S3 tires are classified into four types <b>General, Infrequent, Unkown, Archive.</b>
+ Lets discuss more about these four topics.<br>
+ <b><u>1. General:</u></b><br>
+Coming to general type of tires the cost will be more because of multi availability zones. Lets consider the availability zone of bengalore is 4-5. We need to transfer the data and to retrive the data after some time, the data which you transfer is stored in one of those 4-5 data centers.Later on the data is circulated to all other data centers. This results when if one of the data center is down then, we can manage our data with other data centers.<br>
+<img style="height: 400px; width: 700px;"src="https://dta0yqvfnusiq.cloudfront.net/facti15983775/2019/08/AWS-Regions-and-AZs-5d4475fa4ec9d.jpg"><br>
+<b><u>Advantages:</u></b><br> 
+1. Availability will be high.<br>
+2. Performance will be high.<br>
+<b><u>Disadvantages:</u></b><br>
+Cost will be high compared to other tires about 0.22$/GB.<br><br>
+ <b><u>2. Infrequent:</u></b><br>
+Coming to infrequent type of tires the cost will be less compared to general type because of single availability zones. Lets consider the availability zone of bengalore is 4-5. We need to transfer the data and to retrive the data after some time, the data which you transfer is stored in one of those 4-5 data centers. This results when if the data center which the data are stored is down then, we cannot retrive the data which results the loss of all data.<br>
+<b><u>Advantages:</u></b><br>
+Cost will be low compared to General tires about 0.10$/GB.<br>
+<b><u>Disadvantages:</u></b><br>
+1.High risk.<br> 
+2.Availability will be low compared to general standrads like 99.99%.<br><br>
+ <b><u>3. Unknown:</u></b><br>
+* Coming to unkown it is combination of both general and infrequent based on usage S3 decides weather to put in general or in infrequent.<br>
+* So, it is minor monitoring cost.<br>
+* Which means it's cost is the combination of general (or) infrequent like if S3 decides to put in general the cost will be 0.22$/GB or if S3 decides to put in infrequent the cost will be 0.10$/GB.<br><br>
+ <b><u>4. Archive:</u></b><br>
+Coming to archive it is classified into 2 types namely, <b>Glaciers and Deep Glaciers.</b><br>
+* <b><u>Glaciers:</u></b><br>
+1. In this glacier type it has archiving long live logs.<br>
+2. Respose time is about 1 minute to 12 hours which means the data storing process exists about 1 minute to 12 hours but the retriving process takes upto 5 hours.<br>
+3. The cost of glacier is about 0.004$/GB.<br>
+* <b><u>Deep Glaciers:</u></b><br>
+1. In this deep glacier type it has archiving more long live logs.<br>
+2. Response time is about 10 years which means the data storing process exists about 10 years but the retriving process takes upto 12 hours.<br><br>
+<b><u>Lifecycle policy</u></b><br>
+* This lifecycle policy is to set rules for S3 bucket with these tires.<br>
+* First 30 days we need general because at first we need huge data storage.<br>
+* After 60 days moves to infrequent to save money.<br>
+* After 90 days moves to glacier because our application work on months.<br>
+* After 180 days moves to deep glacier because our application works on years.</i></P>
+<br>
+<p><b style="color: red;">**************************** How to upload files and How to create lifecycle policy for S3 bucket is shown below ****************************</b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/lifecyclepolicy.gif"><br><br>
+<p><b>3. What are ACL's and how to use them?</b></p><br>
+<P><i>* Amazon S3 access control lists (ACLs) enable you to manage access to buckets and objects. Each bucket and object has an ACL attached to it as a subresource.<br>* It defines which AWS accounts or groups are granted access and the type of access.<br>
+* Access Control Lists private and public. By default, Access Control Lists is in private which user cannot view the object which is stored in bucket so, we made bucket as public with the help of ACl to view the object which is stored in bucket.<br>
+<b><u>Note: </u></b> In previous sections we created a bucket with default settings like ACL is disabled with those settings we cannot edit ACL so, we need to create another bucket by enabling the ACL which is shown below.</i></P>
+<br>
+<p><b style="color: red;">************************************** How to set ACL's in S3 bucket is shown below **************************************</b></p><br>
+<p><b><u>ACL changing private to public for S3 bucket objects</u></b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/ACL+private+to+public.gif"><br><br>
+<p><b><u>ACL changing public to private for S3 bucket objects</u></b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/ACL+public+to+private.gif"><br><br>
+<p><b>4. What is encryption in S3 bucket?</b></p><br>
+<P><i>* S3 encryption is largely a tick in the compliance checkbox for PCI / HIPPA and similar standards.<br>* It prevents anyone who gets access to the physical media accessing your data, which while possible is extremely unlikely given the physical controls and media disposal that AWS uses.<br>
+* In S3 there were four types of encryption exists. They are <B>SSE-S3, SSE-KMS, SSE-C, Client side encryption.</B> In those four only two is majorly used encryptions. They are <B>SSE-S3 and SSE-KMS.</B><br>
+<b><u>Server Side Encryption with Amezon S3 Managed Keys (SSE-S3):</u></b><br>
+* As an additional safeguard, it encrypts the key itself with a root key that it regularly rotates.<br>* Amazon S3 server-side encryption uses one of the strongest block ciphers available, 256-bit Advanced Encryption Standard (AES-256), to encrypt your data.<br><br>
+<b style="color: red;">************************************** How to create SSE-S3 for S3 bucket objects is shown below **************************************</b><br><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/SSE-S3.gif"><br><br>
+<b><u>Server Side Encryption with Amezon Key Management Service (SSE-KMS):</u></b><br>
+* When you create an object, you can specify the use of server-side encryption with AWS Key Management Service (AWS KMS) keys to encrypt your data.<br>* This encryption is known as SSE-KMS.<br>* You can apply encryption when you are either uploading a new object or copying an existing object.<br><br>
+<b style="color: red;">************************************** How to create SSE-KMS for S3 bucket objects is shown below **************************************</b><br><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/SSE-KMS.gif"><br><br>
+<b><u>Server Side Encryption with Customer-provided Encryption Keys (SSE-C):</u></b><br>
+* Using server-side encryption with customer-provided encryption keys (SSE-C) allows you to set your own encryption keys.<br>* With the encryption key you provide as part of your request, Amazon S3 manages the encryption as it writes to disks and decryption when you access your objects.<br>
+<b><u>Client Side Encryption:</u></b><br>
+* Client-side encryption is the act of encrypting your data locally to ensure its security as it passes to the Amazon S3 service.<br>* The Amazon S3 service receives your encrypted data; it does not play a role in encrypting or decrypting it.</i></P>
+<br><br>
+<p><b>5. Check properties and permissions in AWS?</b></p><br>
+<P><i><b><u>Properties:</u></b><br>
+<b><u>1. Bucket Versioning:</u></b><br>
+* Bucket versioning provides object to be stored in many duplicate forms.<br>
+* For Example: By default with bucket versioning is disabled. The object we upload is Index.html file if we load another file with same name formate Index.html but the content is different means the previous file Index.html which we uploaded got deleted and new Index.html file will be uploaded.<br>
+* To avoid those we can use bucket versioning enabled which gives a version Id for each and every file we upload in S3 bucket.</i></P>
+<br>
+<p><b style="color: red;">************************************** How to create S3 bucket Versioning **************************************</b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/bucketversioning.gif"><br><br>
+<p><i><b><u>2. Tags:</u></b><br>
+* This tag is used to track storage cost or other criteria by tagging your bucket.<br>
+* It will be like key value pair.<br></i></p>
+<p><b style="color: red;">************************************** How to create S3 bucket Tags **************************************</b></p><br>
+<img src="https://s3-bucket-acl-007.s3.ap-south-1.amazonaws.com/Tags.gif">
+<form action="athena.html" method="post">
+<div class="frame">
+  <button style="float: right;" class="custom-btn btn-1"><span><b>S3-part2</span></b><span><b>Next</b></span></button>
+</div>
+</form>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
